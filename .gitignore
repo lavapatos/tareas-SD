@@ -1,2 +1,3 @@
 .venv/
-dataset/
+dataset/.967_buildings.csv.swp
+dataset/967_buildings.csv
