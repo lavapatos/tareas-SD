@@ -9,7 +9,7 @@ def cargar_zonas(ruta_csv: str) -> dict:
         },
         "Z2_las_condes": {
             "lat_min": -33.420, "lat_max": -33.390,
-            "lon_min": -70.640, "lon_max": -70.600
+            "lon_min": -70.600, "lon_max": -70.550
         },
         "Z3_Maipu": {
             "lat_min": -33.530, "lat_max": -33.490,
@@ -51,7 +51,3 @@ def cargar_zonas(ruta_csv: str) -> dict:
         dataset_final[zona_id] = df_filtrado
 
     return dataset_final
-
-ruta_mia = "../dataset/967_buildings.csv"
-datos_listos = cargar_zonas(ruta_mia)
-print(datos_listos["Z1_providencia"].head(5)) # para probar
