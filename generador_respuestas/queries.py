@@ -128,3 +128,4 @@ def q5_distribucion_confianza(df_zona, num_bins=5):
         i = i + 1
 
     return resultado
+

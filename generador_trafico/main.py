@@ -125,7 +125,6 @@ else: # default
     indices = generar_indices_zipf(n_consultas, total)
 
 # esperar a que el cache service este listo
-print("esperando que levante el cache service...") # borrarpedro
 listo = False
 intentos = 0
 while not listo and intentos < 30:
@@ -140,7 +139,7 @@ if not listo:
     print("cache service no responde, abortando")
     sys.exit(1)
 
-print("iniciar envio de consultas...") #borrarpedro
+
 inicio_total = time.time()
 
 for i, idx in enumerate(indices):
