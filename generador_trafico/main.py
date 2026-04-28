@@ -5,7 +5,7 @@ import sys
 import json
 
 # el cache service
-URL_CACHE = "http://localhost:8001"
+URL_CACHE = "http://cache_service:8001"
 
 # zonas y tipos de queries que existen
 zonas = [
@@ -95,13 +95,19 @@ def generar_indices_uniforme(n_consultas, total_opciones):
     return list(indices)
 
 
-# parametros por linea de comando o defaults
-if len(sys.argv) > 1:
+# parametros: primero env var, despues argv, despues default
+import os
+
+if os.environ.get("N_CONSULTAS", "") != "":
+    n_consultas = int(os.environ["N_CONSULTAS"])
+elif len(sys.argv) > 1:
     n_consultas = int(sys.argv[1])
 else:
     n_consultas = 1000
 
-if len(sys.argv) > 2:
+if os.environ.get("DISTRIBUCION", "") != "":
+    distribucion = os.environ["DISTRIBUCION"]
+elif len(sys.argv) > 2:
     distribucion = sys.argv[2]
 else:
     distribucion = "zipf"

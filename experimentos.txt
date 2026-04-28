@@ -1,0 +1,62 @@
+1. default (zipf + lru + 50mb + ttl default)
+N_CONSULTAS=10000
+DISTRIBUCION=zipf
+REDIS_MAXMEMORY=50mb
+REDIS_POLICY=allkeys-lru
+TTL_BASE=
+
+2. unfimerme (comparar distribucion)
+N_CONSULTAS=10000
+DISTRIBUCION=uniforme
+REDIS_MAXMEMORY=50mb
+REDIS_POLICY=allkeys-lru
+TTL_BASE=
+
+3. LFU (comparar politica)
+N_CONSULTAS=10000
+DISTRIBUCION=zipf
+REDIS_MAXMEMORY=50mb
+REDIS_POLICY=allkeys-lfu
+TTL_BASE=
+
+4. RANDOM (comparar politica)
+N_CONSULTAS=10000
+DISTRIBUCION=zipf
+REDIS_MAXMEMORY=50mb
+REDIS_POLICY=allkeys-random
+TTL_BASE=
+
+5. cache 200MB (comparar tamano)
+N_CONSULTAS=10000
+DISTRIBUCION=zipf
+REDIS_MAXMEMORY=200mb
+REDIS_POLICY=allkeys-lru
+TTL_BASE=
+
+6. cacahe 500MB (comparar tamano)
+N_CONSULTAS=10000
+DISTRIBUCION=zipf
+REDIS_MAXMEMORY=500mb
+REDIS_POLICY=allkeys-lru
+TTL_BASE=
+
+7. TTL corto (comparar ttl)
+N_CONSULTAS=10000
+DISTRIBUCION=zipf
+REDIS_MAXMEMORY=50mb
+REDIS_POLICY=allkeys-lru
+TTL_BASE=10
+
+8. TTL medio (comparar ttl)
+N_CONSULTAS=10000
+DISTRIBUCION=zipf
+REDIS_MAXMEMORY=50mb
+REDIS_POLICY=allkeys-lru
+TTL_BASE=60
+
+9. TTL long (comparar ttl)
+N_CONSULTAS=10000
+DISTRIBUCION=zipf
+REDIS_MAXMEMORY=50mb
+REDIS_POLICY=allkeys-lru
+TTL_BASE=300

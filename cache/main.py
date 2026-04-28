@@ -3,15 +3,16 @@ import redis
 import json
 import time
 import requests
+import os
 
 app = FastAPI()
 
 # conectar a redis
 # host redis porque asi se va a llamar el contenedor en docker compose
-r = redis.Redis(host="localhost", port=6379, db=0, decode_responses=True)
+r = redis.Redis(host="redis", port=6379, db=0, decode_responses=True)
 
 # la url del generador de respuestas (otro contenedor)
-URL_GENERADOR = "http://localhost:8002"
+URL_GENERADOR = "http://generador_respuestas:8002"
 
 
 def armar_cache_key(body):
@@ -93,9 +94,12 @@ def recibir_consulta(body: dict):
 
 
 def obtener_ttl(query_type):
-    # ttl en segundos por tipo de consulta
-    # los mas simples (conteo) expiran mas rapido
-    # los mas pesados (comparar, distribucion) duran mas
+    # si hay variable de entorno, usar esa para todos
+    ttl_env = os.environ.get("TTL_BASE", "")
+    if ttl_env != "":
+        return int(ttl_env)
+
+    # si no, cada tipo tiene su ttl
     ttls = {
         "Q1": 30,
         "Q2": 45,

@@ -1,0 +1,61 @@
+services:
+
+  redis:
+    image: redis:7
+    command: redis-server --maxmemory ${REDIS_MAXMEMORY} --maxmemory-policy ${REDIS_POLICY}
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 2s
+      timeout: 3s
+      retries: 10
+
+  generador_respuestas:
+    build: ./generador_respuestas
+    volumes:
+      - ./data:/app/dataset
+    ports:
+      - "8002:8002"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8002/docs')"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+      start_period: 60s
+
+  cache_service:
+    build: ./cache
+    ports:
+      - "8001:8001"
+    environment:
+      - TTL_BASE=${TTL_BASE}
+    depends_on:
+      redis:
+        condition: service_healthy
+      generador_respuestas:
+        condition: service_healthy
+
+  generador_trafico:
+    build: ./generador_trafico
+    environment:
+      - N_CONSULTAS=${N_CONSULTAS}
+      - DISTRIBUCION=${DISTRIBUCION}
+    depends_on:
+      cache_service:
+        condition: service_started
+
+  recolector:
+    build: ./metricas
+    command: python recolector.py
+    volumes:
+      - ./output:/app/output
+    depends_on:
+      redis:
+        condition: service_healthy
+
+  analizador:
+    build: ./metricas
+    command: python analizador.py
+    volumes:
+      - ./output:/app/output

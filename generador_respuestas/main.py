@@ -8,7 +8,7 @@ app = FastAPI()
 # cargar dataset cuando parta el server
 # se me demora mucho (chequear pedro)
 inicio = time.time()
-datos = cargar_zonas("../data/967_buildings.csv")
+datos = cargar_zonas("/app/dataset/967_buildings.csv")
 fin = time.time()
 print(f"dataset cargado en {round(fin - inicio, 2)} segundos")
 
