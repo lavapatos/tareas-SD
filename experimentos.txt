@@ -1,62 +1,200 @@
-1. default (zipf + lru + 50mb + ttl default)
+experimentos tarea SD
+padding fijo en 300 para todos (PADDING_KB=300)
+10000 consultas para todos (N_CONSULTAS=10000)
+
+
+comparar distribuciones
+(dejar todo igual, solo cambiar distribución)
+
+1. zipf default
 N_CONSULTAS=10000
 DISTRIBUCION=zipf
 REDIS_MAXMEMORY=50mb
 REDIS_POLICY=allkeys-lru
 TTL_BASE=
+PADDING_KB=300
 
-2. unfimerme (comparar distribucion)
+2. uniforme default
 N_CONSULTAS=10000
 DISTRIBUCION=uniforme
 REDIS_MAXMEMORY=50mb
 REDIS_POLICY=allkeys-lru
 TTL_BASE=
+PADDING_KB=300
 
-3. LFU (comparar politica)
+gráfico: barras comparando hit rate zipf vs uniforme
+gráfico: barras comparando throughput zipf vs uniforme
+gráfico: barras latencia p50 y p95 zipf vs uniforme
+apostar que zipf tiene más hits porque repite queries populares, uniforme es peor caso
+
+
+comparar políticas con zipf
+(dejar todo igual, solo cambiar política)
+
+3. zipf + lfu
 N_CONSULTAS=10000
 DISTRIBUCION=zipf
 REDIS_MAXMEMORY=50mb
 REDIS_POLICY=allkeys-lfu
 TTL_BASE=
+PADDING_KB=300
 
-4. RANDOM (comparar politica)
+4. zipf + random
 N_CONSULTAS=10000
 DISTRIBUCION=zipf
 REDIS_MAXMEMORY=50mb
 REDIS_POLICY=allkeys-random
 TTL_BASE=
+PADDING_KB=300
 
-5. cache 200MB (comparar tamano)
+(el exp 1 es el zipf + lru, usar ese como referencia)
+gráfico: barras hit rate lru vs lfu vs random con zipf
+gráfico: barras eviction rate lru vs lfu vs random
+lfu debería ganar con zipf porque guarda las más frecuentes
+
+
+comparar políticas con uniforme
+(para contrastar con el grupo B)
+
+5. uniforme + lfu
+N_CONSULTAS=10000
+DISTRIBUCION=uniforme
+REDIS_MAXMEMORY=50mb
+REDIS_POLICY=allkeys-lfu
+TTL_BASE=
+PADDING_KB=300
+
+6. uniforme + random
+N_CONSULTAS=10000
+DISTRIBUCION=uniforme
+REDIS_MAXMEMORY=50mb
+REDIS_POLICY=allkeys-random
+TTL_BASE=
+PADDING_KB=300
+
+(el exp 2 es el uniforme + lru, usar ese como referencia)
+gráfico: barras hit rate lru vs lfu vs random con uniforme
+gráfico: comparar políticas zipf vs políticas uniforme (tabla cruzada)
+con uniforme la política importa menos porque todo se consulta igual si es uniforme
+
+
+comparar tamaño de cache con zipf
+(dejar todo igual, solo cambiar tamaño)
+
+7. zipf + 200mb
 N_CONSULTAS=10000
 DISTRIBUCION=zipf
 REDIS_MAXMEMORY=200mb
 REDIS_POLICY=allkeys-lru
 TTL_BASE=
+PADDING_KB=300
 
-6. cacahe 500MB (comparar tamano)
+8. zipf + 500mb
 N_CONSULTAS=10000
 DISTRIBUCION=zipf
 REDIS_MAXMEMORY=500mb
 REDIS_POLICY=allkeys-lru
 TTL_BASE=
+PADDING_KB=300
 
-7. TTL corto (comparar ttl)
+(el exp 1 es zipf + 50mb, usar como referencia)
+gráfico: línea hit rate vs tamaño cache (50, 200, 500)
+gráfico: línea eviction rate vs tamaño cache
+gráfico: línea latencia p50 vs tamaño cache
+más memoria = menos evictions = mejor hit rate pero rendimiento decreciente se supone pedro pc
+
+
+comparar tamaño de cache con uniforme
+(para contrastar con grupo D)
+
+9. uniforme + 200mb
+N_CONSULTAS=10000
+DISTRIBUCION=uniforme
+REDIS_MAXMEMORY=200mb
+REDIS_POLICY=allkeys-lru
+TTL_BASE=
+PADDING_KB=300
+
+10. uniforme + 500mb
+N_CONSULTAS=10000
+DISTRIBUCION=uniforme
+REDIS_MAXMEMORY=500mb
+REDIS_POLICY=allkeys-lru
+TTL_BASE=
+PADDING_KB=300
+
+(el exp 2 es uniforme + 50mb, usar como referencia)
+gráfico: comparar curva tamaño zipf vs curva tamaño uniforme
+con uniforme el tamaño pega distinto porque no hay queries favoritas
+
+
+comparar TTL
+(dejar todo igual, solo cambiar ttl)
+
+11. ttl corto (10s)
 N_CONSULTAS=10000
 DISTRIBUCION=zipf
 REDIS_MAXMEMORY=50mb
 REDIS_POLICY=allkeys-lru
 TTL_BASE=10
+PADDING_KB=300
 
-8. TTL medio (comparar ttl)
+12. ttl medio (60s)
 N_CONSULTAS=10000
 DISTRIBUCION=zipf
 REDIS_MAXMEMORY=50mb
 REDIS_POLICY=allkeys-lru
 TTL_BASE=60
+PADDING_KB=300
 
-9. TTL long (comparar ttl)
+13. ttl largo (300s)
 N_CONSULTAS=10000
 DISTRIBUCION=zipf
 REDIS_MAXMEMORY=50mb
 REDIS_POLICY=allkeys-lru
 TTL_BASE=300
+PADDING_KB=300
+
+(el exp 1 es zipf + ttl default que son 30-60s, usar como referencia)
+gráfico: línea hit rate vs ttl
+gráfico: línea cache efficiency vs ttl
+ttl corto = más misses pero datos frescos, ttl largo = mejor hit rate pero datos viejos vencidos stale
+
+
+comparar ttl con uniforme (contraste)
+
+14. uniforme + ttl corto
+N_CONSULTAS=10000
+DISTRIBUCION=uniforme
+REDIS_MAXMEMORY=50mb
+REDIS_POLICY=allkeys-lru
+TTL_BASE=10
+PADDING_KB=300
+
+15. uniforme + ttl largo
+N_CONSULTAS=10000
+DISTRIBUCION=uniforme
+REDIS_MAXMEMORY=50mb
+REDIS_POLICY=allkeys-lru
+TTL_BASE=300
+PADDING_KB=300
+
+gráfico: comparar impacto ttl en zipf vs uniforme
+el ttl pega más cuando hay repetición (zipf)
+
+
+gráfico propuesta
+
+1. barras: hit rate zipf vs uniforme
+2. barras: throughput zipf vs uniforme
+3. barras: latencia p50/p95 zipf vs uniforme
+4. barras: hit rate por política (lru, lfu, random) con zipf
+5. barras: eviction rate por política con zipf
+6. barras: hit rate por política con uniforme
+7. tabla: hit rate política x distribución (cruzada)
+8. línea: hit rate vs tamaño cache (zipf)
+9. línea: eviction rate vs tamaño cache (zipf)
+10. línea: hit rate vs tamaño cache (uniforme)
+11. línea: hit rate vs ttl (zipf)
+12. línea: cache efficiency vs ttl
+13. comparación: impacto ttl en zipf vs uniforme

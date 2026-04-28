@@ -75,6 +75,13 @@ def recibir_consulta(body: dict):
 
         resultado = datos_resp["result"]
 
+        # padding para que pese mas en cache y se llene bien para eviction rate
+        padding_kb = int(os.environ.get("PADDING_KB", "0"))
+        if padding_kb > 0:
+            if not isinstance(resultado, dict):
+                resultado = {"value": resultado}
+            resultado["_padding"] = "x" * (padding_kb * 1024)
+
         # meter en redis con TTL
         ttl = obtener_ttl(body["query_type"])
         r.setex(cache_key, ttl, json.dumps(resultado))

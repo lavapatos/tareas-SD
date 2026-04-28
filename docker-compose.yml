@@ -30,6 +30,7 @@ services:
       - "8001:8001"
     environment:
       - TTL_BASE=${TTL_BASE}
+      - PADDING_KB=${PADDING_KB}
     depends_on:
       redis:
         condition: service_healthy
