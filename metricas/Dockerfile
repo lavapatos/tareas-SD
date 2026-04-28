@@ -1,9 +1,0 @@
-FROM python:3.11-slim
-
-WORKDIR /app
-
-RUN pip install --no-cache-dir redis numpy
-
-COPY recolector.py analizador.py ./
-
-CMD ["python", "recolector.py"]
