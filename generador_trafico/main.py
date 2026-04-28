@@ -5,7 +5,7 @@ import sys
 import json
 
 # el cache service
-URL_CACHE = "http://cache_service:8001"
+URL_CACHE = "http://localhost:8001"
 
 # zonas y tipos de queries que existen
 zonas = [

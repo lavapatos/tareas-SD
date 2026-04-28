@@ -8,10 +8,10 @@ app = FastAPI()
 
 # conectar a redis
 # host redis porque asi se va a llamar el contenedor en docker compose
-r = redis.Redis(host="redis", port=6379, db=0, decode_responses=True)
+r = redis.Redis(host="localhost", port=6379, db=0, decode_responses=True)
 
 # la url del generador de respuestas (otro contenedor)
-URL_GENERADOR = "http://generador_respuestas:8002"
+URL_GENERADOR = "http://localhost:8002"
 
 
 def armar_cache_key(body):
