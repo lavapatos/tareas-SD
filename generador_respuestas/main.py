@@ -1,9 +1,16 @@
 from fastapi import FastAPI
+from fastapi.responses import JSONResponse
 from datos import cargar_zonas
 from queries import q1_conteo, q2_area, q3_densidad, q4_comparar, q5_distribucion_confianza
 import time
+import random
+import os
 
 app = FastAPI()
+
+# fallas y latencia artificial (tarea 2)
+falla_rate = float(os.environ.get("FALLA_RATE", "0"))
+latency_artificial = float(os.environ.get("LATENCY_ARTIFICIAL", "0"))
 
 # cargar dataset cuando parta el server
 # se me demora mucho (chequear pedro)
@@ -19,6 +26,12 @@ for zona in datos:
 
 @app.post("/query")
 def procesar_consulta(body: dict):
+    if falla_rate > 0 and random.random() < falla_rate:
+        return JSONResponse(status_code=503, content={"error": "falla simulada"})
+
+    if latency_artificial > 0:
+        time.sleep(latency_artificial)
+
     # sacar los parametros del body
     tipo = body["query_type"]
     zona_id = body.get("zone_id", None)

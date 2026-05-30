@@ -49,6 +49,9 @@ services:
       - ./data:/app/dataset
     ports:
       - "8002:8002"
+    environment:
+      - FALLA_RATE=${FALLA_RATE}
+      - LATENCY_ARTIFICIAL=${LATENCY_ARTIFICIAL}
     healthcheck:
       test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8002/docs')"]
       interval: 10s
