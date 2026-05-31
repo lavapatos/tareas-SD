@@ -1,0 +1,134 @@
+ experimentos tarea 2
+ base fija en todos: zipf, 50mb, volatile-lfu, ttl 60, padding 1024
+
+ del enunciado 1: sistema base t1 sincrono 
+ 1 - t1 sincrono, checkout tag tarea-1, correr sin kafka
+ (hacer pedro)
+
+ del enunciado 2: kafka 1 consumer 
+ 2 - kafka 1c sin fallas
+ N_CONSULTAS=10000 SEND_RATE=50 FALLA_RATE=0 LATENCY_ARTIFICIAL=0 consumers=1
+ (hecho yo edicson guardado en edicson_comparar_1_2_3_6_y_extra/esc02_kafka_1c)
+
+ del enunciado 3: kafka multiples consumers 
+ 3a - 2 consumers
+ N_CONSULTAS=10000 SEND_RATE=50 FALLA_RATE=0 LATENCY_ARTIFICIAL=0 consumers=2
+ (hecho yo edicson guardado en edicson_comparar_1_2_3_6_y_extra/esc03a_2c)
+
+ 3b - 4 consumers
+ N_CONSULTAS=10000 SEND_RATE=50 FALLA_RATE=0 LATENCY_ARTIFICIAL=0 consumers=4
+ (hecho yo edicson guardado en edicson_comparar_1_2_3_6_y_extra/esc03b_4c)
+
+ 3c - 8 consumers
+ N_CONSULTAS=10000 SEND_RATE=50 FALLA_RATE=0 LATENCY_ARTIFICIAL=0 consumers=8
+ (hecho yo edicson guardado en edicson_comparar_1_2_3_6_y_extra/esc03c_8c)
+
+ del enunciado 4: falla temporal (docker stop del generador) 
+ 4a - docker stop generador 15 segundos, 1 consumer
+ N_CONSULTAS=10000 SEND_RATE=50 FALLA_RATE=0 LATENCY_ARTIFICIAL=0 consumers=1
+ (hacer pedro)
+
+ 4b - docker stop generador 30 segundos, 1 consumer
+ N_CONSULTAS=10000 SEND_RATE=50 FALLA_RATE=0 LATENCY_ARTIFICIAL=0 consumers=1
+ (hacer pedro)
+
+ 4c - docker stop generador 60 segundos, 1 consumer
+ N_CONSULTAS=10000 SEND_RATE=50 FALLA_RATE=0 LATENCY_ARTIFICIAL=0 consumers=1
+ (hacer pedro)
+
+ del enunciado 5: reintentos y dlq (docker stop para agotar reintentos) 
+ 5a - docker stop generador hasta que haya dlq, 1 consumer
+ N_CONSULTAS=10000 SEND_RATE=50 FALLA_RATE=0 LATENCY_ARTIFICIAL=0 consumers=1
+ (hacer pedro)
+
+ 5b - docker stop generador hasta que haya dlq, 4 consumers
+ N_CONSULTAS=10000 SEND_RATE=50 FALLA_RATE=0 LATENCY_ARTIFICIAL=0 consumers=4
+ (hacer pedro)
+
+ del enunciado 6: spike de trafico 
+ 6 - spike con 1 consumer
+ N_CONSULTAS=10000 SEND_RATE=50 SPIKE_ENABLED=true SPIKE_AT=40 SPIKE_DURATION=2000 SPIKE_RATE=200 FALLA_RATE=0 LATENCY_ARTIFICIAL=0 consumers=1
+ (hecho yo edicson guardado en edicson_comparar_1_2_3_6_y_extra/esc09a_spike_1c_hw)
+
+ 6b - spike con 4 consumers
+ N_CONSULTAS=10000 SEND_RATE=50 SPIKE_ENABLED=true SPIKE_AT=40 SPIKE_DURATION=2000 SPIKE_RATE=200 FALLA_RATE=0 LATENCY_ARTIFICIAL=0 consumers=4
+ (hacer pedro)
+
+ del enunciado 7: recuperacion t1 vs t2 
+ 7-t1 - t1 sincrono, docker stop generador 30s
+ (hacer pedro, checkout tag tarea-1)
+
+ 7-t2-1c - kafka 1c, docker stop generador 30s
+ N_CONSULTAS=10000 SEND_RATE=50 FALLA_RATE=0 LATENCY_ARTIFICIAL=0 consumers=1
+ (hacer pedro)
+
+ 7-t2-4c - kafka 4c, docker stop generador 30s
+ N_CONSULTAS=10000 SEND_RATE=50 FALLA_RATE=0 LATENCY_ARTIFICIAL=0 consumers=4
+ (hacer pedro)
+
+  EXTRAS EDICSON: falla aleatoria (falla_rate, sin docker stop) 
+ extra - falla 0.3 con 1c
+ N_CONSULTAS=10000 SEND_RATE=50 FALLA_RATE=0.3 LATENCY_ARTIFICIAL=0 consumers=1
+ (hecho yo edicson guardado en edicson_comparar_1_2_3_6_y_extra/esc05b_falla03_1c_hw)
+
+ extra - falla 0.3 con 2c
+ N_CONSULTAS=10000 SEND_RATE=50 FALLA_RATE=0.3 LATENCY_ARTIFICIAL=0 consumers=2
+ (hecho yo edicson guardado en edicson_comparar_1_2_3_6_y_extra/esc06a_falla03_2c)
+
+ extra - falla 0.3 con 4c
+ N_CONSULTAS=10000 SEND_RATE=50 FALLA_RATE=0.3 LATENCY_ARTIFICIAL=0 consumers=4
+ (hecho yo edicson guardado en edicson_comparar_1_2_3_6_y_extra/esc06b_falla03_4c)
+
+ extra - falla 0.9 con 1c
+ N_CONSULTAS=10000 SEND_RATE=50 FALLA_RATE=0.9 LATENCY_ARTIFICIAL=0 consumers=1
+ (hecho yo edicson guardado en edicson_comparar_extra_2/extra_falla09_1c)
+
+ extra - falla 0.9 con 2c
+ N_CONSULTAS=10000 SEND_RATE=50 FALLA_RATE=0.9 LATENCY_ARTIFICIAL=0 consumers=2
+ (hecho yo edicson guardado en edicson_comparar_extra_2/extra_falla09_2c)
+
+ extra - falla 0.9 con 4c
+ N_CONSULTAS=10000 SEND_RATE=50 FALLA_RATE=0.9 LATENCY_ARTIFICIAL=0 consumers=4
+ (hecho yo edicson guardado en edicson_comparar_extra_2/extra_falla09_4c)
+
+ extra: latencia artificial 
+ extra - latencia 0.5s con 1c
+ N_CONSULTAS=1000 SEND_RATE=50 FALLA_RATE=0 LATENCY_ARTIFICIAL=0.5 consumers=1
+ (hecho yo edicson guardado en edicson_comparar_1_2_3_6_y_extra/esc07a_lat05_1c)
+
+ extra - latencia 1.0s con 1c
+ N_CONSULTAS=1000 SEND_RATE=50 FALLA_RATE=0 LATENCY_ARTIFICIAL=1.0 consumers=1
+ (hecho yo edicson guardado en edicson_comparar_1_2_3_6_y_extra/esc07b_lat10_1c)
+
+ extra - latencia 2.0s con 1c
+ N_CONSULTAS=1000 SEND_RATE=50 FALLA_RATE=0 LATENCY_ARTIFICIAL=2.0 consumers=1
+ (hecho yo edicson guardado en edicson_comparar_1_2_3_6_y_extra/esc07c_lat20_1c)
+
+ extra - latencia 1.0s con 2c
+ N_CONSULTAS=1000 SEND_RATE=50 FALLA_RATE=0 LATENCY_ARTIFICIAL=1.0 consumers=2
+ (hecho yo edicson guardado en edicson_comparar_1_2_3_6_y_extra/esc08a_lat10_2c)
+
+ extra - latencia 1.0s con 4c
+ N_CONSULTAS=1000 SEND_RATE=50 FALLA_RATE=0 LATENCY_ARTIFICIAL=1.0 consumers=4
+ (hecho yo edicson guardado en edicson_comparar_1_2_3_6_y_extra/esc08b_lat10_4c)
+
+ extra - latencia 1.0s con 8c
+ N_CONSULTAS=1000 SEND_RATE=50 FALLA_RATE=0 LATENCY_ARTIFICIAL=1.0 consumers=8
+ (hecho yo edicson guardado en edicson_comparar_1_2_3_6_y_extra/esc08c_lat10_8c)
+
+ extra - cruces falla + latencia 
+ extra - falla 0.3 + latencia 1.0s con 1c
+ N_CONSULTAS=1000 SEND_RATE=50 FALLA_RATE=0.3 LATENCY_ARTIFICIAL=1.0 consumers=1
+ (hecho yo edicson guardado en edicson_comparar_1_2_3_6_y_extra/esc_cruce_falla_lat_1c)
+
+ extra - falla 0.3 + latencia 1.0s con 4c
+ N_CONSULTAS=1000 SEND_RATE=50 FALLA_RATE=0.3 LATENCY_ARTIFICIAL=1.0 consumers=4
+ (hecho yo edicson guardado en edicson_comparar_1_2_3_6_y_extra/esc_cruce_falla_lat_4c)
+
+ extra - falla 0.9 + latencia 1.0s con 1c
+ N_CONSULTAS=1000 SEND_RATE=50 FALLA_RATE=0.9 LATENCY_ARTIFICIAL=1.0 consumers=1
+ (hecho yo edicson guardado en edicson_comparar_extra_2/extra_falla09_lat10_1c)
+
+ extra - falla 0.9 + latencia 1.0s con 4c
+ N_CONSULTAS=1000 SEND_RATE=50 FALLA_RATE=0.9 LATENCY_ARTIFICIAL=1.0 consumers=4
+ (hecho yo edicson guardado en edicson_comparar_extra_2/extra_falla09_lat10_4c)
