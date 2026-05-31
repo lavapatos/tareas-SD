@@ -280,7 +280,7 @@ i = 0
 while i < len(eventos):
     ev = eventos[i]
     tipo = ev["evento"]
-    rc = ev["retry_count"]
+    rc = ev.get("retry_count", 0)
     
     if tipo == "reintento":
         cant_reintentos = cant_reintentos + 1
