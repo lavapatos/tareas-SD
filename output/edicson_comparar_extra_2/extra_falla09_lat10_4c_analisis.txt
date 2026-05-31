@@ -1,0 +1,88 @@
+ Container tareas-sd-analizador-run-144d479c7b0b Creating 
+ Container tareas-sd-analizador-run-144d479c7b0b Created 
+eventos: 1883
+
+METRICA 1: HIT RATE
+global:
+hits:  786
+misses:  1097
+total:  1883
+hit rate:  41.74%
+miss rate:  58.26%
+
+por tipo de query:
+Q1: 499 hits, 601 misses, total 1100, hit rate 45.36%
+Q2: 200 hits, 270 misses, total 470, hit rate 42.55%
+Q3: 86 hits, 186 misses, total 272, hit rate 31.62%
+Q4: 1 hits, 39 misses, total 40, hit rate 2.5%
+Q5: 0 hits, 1 misses, total 1, hit rate 0.0%
+
+METRICA 2: THROUGHPUT
+duracion total:  136.16 segundos
+consultas:  1883
+throughput:  13.83 consultas/s
+
+METRICA 3: LATENCIA p50 / p95
+total (1883 eventos):
+p50: 26.51 ms
+p95: 174.6 ms
+promedio: 76.53 ms
+min: 0 ms
+max: 1244.36 ms
+
+hits / cache (786 eventos):
+p50: 8.16 ms
+p95: 45.48 ms
+promedio: 14.91 ms
+
+misses / db (1097 eventos):
+p50: 69.15 ms
+p95: 1022.89 ms
+promedio: 120.68 ms
+
+solo tiempo db (58 eventos):
+p50: 1040.82 ms
+p95: 1087.83 ms
+promedio: 1042.87 ms
+
+latencia por tipo de query:
+Q1: p50=28.95ms, p95=153.43ms, avg=62.19ms
+Q2: p50=28.37ms, p95=193.76ms, avg=80.52ms
+Q3: p50=14.09ms, p95=177.11ms, avg=82.64ms
+Q4: p50=0.0ms, p95=1133.9ms, avg=384.5ms
+Q5: p50=0.0ms, p95=0.0ms, avg=0.0ms
+
+METRICA 4: EVICTION RATE
+evicted keys:  0
+duracion:  2.27 minutos
+eviction rate:  0.0 evictions/min
+maxmemory:  52428800 bytes
+policy:  volatile-lfu
+memoria usada:  4.18M
+
+METRICA 5: CACHE EFFICIENCY
+avg latencia hit (t_cache):  14.91 ms
+avg latencia db (t_db):  1042.87 ms
+tiempo total acumulado:  144113.12 ms
+cache efficiency:  -0.0117
+
+RESUMEN
+hit rate:  41.74%
+throughput:  13.83 consultas/s
+latencia p50:  26.51 ms
+latencia p95:  174.6 ms
+eviction rate:  0.0 evictions/min
+cache efficiency:  -0.0117
+
+METRICAS TAREA 2
+retry rate: 13.44%
+recovery rate: 11.46%
+dlq rate: 0.0%
+recovery time: 125.2 segundos
+
+BACKLOG SIZE
+consultas: max 1008, promedio 184.65
+reintentos: max 251, promedio 184.55
+dlq: max 0, promedio 0.0
+
+tiempo: 209s

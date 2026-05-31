@@ -1,0 +1,88 @@
+ Container tareas-sd-analizador-run-f7f9cc5b7df7 Creating 
+ Container tareas-sd-analizador-run-f7f9cc5b7df7 Created 
+eventos: 1879
+
+METRICA 1: HIT RATE
+global:
+hits:  791
+misses:  1088
+total:  1879
+hit rate:  42.1%
+miss rate:  57.9%
+
+por tipo de query:
+Q1: 488 hits, 576 misses, total 1064, hit rate 45.86%
+Q2: 210 hits, 295 misses, total 505, hit rate 41.58%
+Q3: 92 hits, 168 misses, total 260, hit rate 35.38%
+Q4: 1 hits, 42 misses, total 43, hit rate 2.33%
+Q5: 0 hits, 7 misses, total 7, hit rate 0.0%
+
+METRICA 2: THROUGHPUT
+duracion total:  116.18 segundos
+consultas:  1879
+throughput:  16.17 consultas/s
+
+METRICA 3: LATENCIA p50 / p95
+total (1879 eventos):
+p50: 7.34 ms
+p95: 49.35 ms
+promedio: 51.03 ms
+min: 0 ms
+max: 1103.82 ms
+
+hits / cache (791 eventos):
+p50: 5.76 ms
+p95: 8.58 ms
+promedio: 6.02 ms
+
+misses / db (1088 eventos):
+p50: 33.59 ms
+p95: 1023.32 ms
+promedio: 83.76 ms
+
+solo tiempo db (60 eventos):
+p50: 1026.99 ms
+p95: 1054.32 ms
+promedio: 1029.07 ms
+
+latencia por tipo de query:
+Q1: p50=7.83ms, p95=44.78ms, avg=32.62ms
+Q2: p50=7.16ms, p95=48.5ms, avg=46.29ms
+Q3: p50=7.51ms, p95=1047.24ms, avg=96.73ms
+Q4: p50=0.0ms, p95=1070.44ms, avg=294.48ms
+Q5: p50=0.0ms, p95=0.0ms, avg=0.0ms
+
+METRICA 4: EVICTION RATE
+evicted keys:  0
+duracion:  1.94 minutos
+eviction rate:  0.0 evictions/min
+maxmemory:  52428800 bytes
+policy:  volatile-lfu
+memoria usada:  5.39M
+
+METRICA 5: CACHE EFFICIENCY
+avg latencia hit (t_cache):  6.02 ms
+avg latencia db (t_db):  1029.07 ms
+tiempo total acumulado:  95893.12 ms
+cache efficiency:  -0.0047
+
+RESUMEN
+hit rate:  42.1%
+throughput:  16.17 consultas/s
+latencia p50:  7.34 ms
+latencia p95:  49.35 ms
+eviction rate:  0.0 evictions/min
+cache efficiency:  -0.0047
+
+METRICAS TAREA 2
+retry rate: 12.61%
+recovery rate: 16.03%
+dlq rate: 0.0%
+recovery time: 105.23 segundos
+
+BACKLOG SIZE
+consultas: max 1015, promedio 431.17
+reintentos: max 237, promedio 141.23
+dlq: max 0, promedio 0.0
+
+tiempo: 188s

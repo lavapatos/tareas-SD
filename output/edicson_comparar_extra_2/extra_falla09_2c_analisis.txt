@@ -1,0 +1,88 @@
+ Container tareas-sd-analizador-run-dfde7c2e39b6 Creating 
+ Container tareas-sd-analizador-run-dfde7c2e39b6 Created 
+eventos: 18584
+
+METRICA 1: HIT RATE
+global:
+hits:  8309
+misses:  10275
+total:  18584
+hit rate:  44.71%
+miss rate:  55.29%
+
+por tipo de query:
+Q1: 4968 hits, 5479 misses, total 10447, hit rate 47.55%
+Q2: 2121 hits, 2618 misses, total 4739, hit rate 44.76%
+Q3: 1203 hits, 1780 misses, total 2983, hit rate 40.33%
+Q4: 17 hits, 384 misses, total 401, hit rate 4.24%
+Q5: 0 hits, 14 misses, total 14, hit rate 0.0%
+
+METRICA 2: THROUGHPUT
+duracion total:  296.47 segundos
+consultas:  18584
+throughput:  62.68 consultas/s
+
+METRICA 3: LATENCIA p50 / p95
+total (18584 eventos):
+p50: 21.98 ms
+p95: 87.1 ms
+promedio: 31.7 ms
+min: 0 ms
+max: 285.84 ms
+
+hits / cache (8309 eventos):
+p50: 6.4 ms
+p95: 24.76 ms
+promedio: 9.05 ms
+
+misses / db (10275 eventos):
+p50: 49.09 ms
+p95: 97.43 ms
+promedio: 50.02 ms
+
+solo tiempo db (362 eventos):
+p50: 38.64 ms
+p95: 93.36 ms
+promedio: 42.99 ms
+
+latencia por tipo de query:
+Q1: p50=27.47ms, p95=86.93ms, avg=32.78ms
+Q2: p50=21.99ms, p95=87.93ms, avg=32.25ms
+Q3: p50=12.18ms, p95=84.61ms, avg=29.28ms
+Q4: p50=0.0ms, p95=90.7ms, avg=15.23ms
+Q5: p50=0.0ms, p95=127.89ms, avg=28.4ms
+
+METRICA 4: EVICTION RATE
+evicted keys:  28
+duracion:  4.94 minutos
+eviction rate:  5.67 evictions/min
+maxmemory:  52428800 bytes
+policy:  volatile-lfu
+memoria usada:  42.68M
+
+METRICA 5: CACHE EFFICIENCY
+avg latencia hit (t_cache):  9.05 ms
+avg latencia db (t_db):  42.99 ms
+tiempo total acumulado:  589143.64 ms
+cache efficiency:  0.5104
+
+RESUMEN
+hit rate:  44.71%
+throughput:  62.68 consultas/s
+latencia p50:  21.98 ms
+latencia p95:  87.1 ms
+eviction rate:  5.67 evictions/min
+cache efficiency:  0.5104
+
+METRICAS TAREA 2
+retry rate: 8.64%
+recovery rate: 4.67%
+dlq rate: 0.0%
+recovery time: 295.17 segundos
+
+BACKLOG SIZE
+consultas: max 4789, promedio 2746.49
+reintentos: max 1604, promedio 739.57
+dlq: max 0, promedio 0.0
+
+tiempo: 379s

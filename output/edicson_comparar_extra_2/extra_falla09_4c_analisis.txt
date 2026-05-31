@@ -1,0 +1,88 @@
+ Container tareas-sd-analizador-run-23cde49bf95a Creating 
+ Container tareas-sd-analizador-run-23cde49bf95a Created 
+eventos: 18736
+
+METRICA 1: HIT RATE
+global:
+hits:  8384
+misses:  10352
+total:  18736
+hit rate:  44.75%
+miss rate:  55.25%
+
+por tipo de query:
+Q1: 4921 hits, 5473 misses, total 10394, hit rate 47.34%
+Q2: 2147 hits, 2631 misses, total 4778, hit rate 44.94%
+Q3: 1295 hits, 1819 misses, total 3114, hit rate 41.59%
+Q4: 21 hits, 405 misses, total 426, hit rate 4.93%
+Q5: 0 hits, 24 misses, total 24, hit rate 0.0%
+
+METRICA 2: THROUGHPUT
+duracion total:  326.46 segundos
+consultas:  18736
+throughput:  57.39 consultas/s
+
+METRICA 3: LATENCIA p50 / p95
+total (18736 eventos):
+p50: 40.98 ms
+p95: 163.68 ms
+promedio: 59.48 ms
+min: 0 ms
+max: 348.45 ms
+
+hits / cache (8384 eventos):
+p50: 11.23 ms
+p95: 48.77 ms
+promedio: 17.43 ms
+
+misses / db (10352 eventos):
+p50: 96.31 ms
+p95: 182.4 ms
+promedio: 93.55 ms
+
+solo tiempo db (378 eventos):
+p50: 53.87 ms
+p95: 134.78 ms
+promedio: 60.47 ms
+
+latencia por tipo de query:
+Q1: p50=45.42ms, p95=164.73ms, avg=61.69ms
+Q2: p50=42.75ms, p95=163.45ms, avg=59.75ms
+Q3: p50=33.23ms, p95=158.18ms, avg=55.89ms
+Q4: p50=0.0ms, p95=170.62ms, avg=31.62ms
+Q5: p50=0.0ms, p95=86.13ms, avg=12.52ms
+
+METRICA 4: EVICTION RATE
+evicted keys:  37
+duracion:  5.44 minutos
+eviction rate:  6.8 evictions/min
+maxmemory:  52428800 bytes
+policy:  volatile-lfu
+memoria usada:  26.44M
+
+METRICA 5: CACHE EFFICIENCY
+avg latencia hit (t_cache):  17.43 ms
+avg latencia db (t_db):  60.47 ms
+tiempo total acumulado:  1114498.59 ms
+cache efficiency:  0.2991
+
+RESUMEN
+hit rate:  44.75%
+throughput:  57.39 consultas/s
+latencia p50:  40.98 ms
+latencia p95:  163.68 ms
+eviction rate:  6.8 evictions/min
+cache efficiency:  0.2991
+
+METRICAS TAREA 2
+retry rate: 8.49%
+recovery rate: 5.28%
+dlq rate: 0.0%
+recovery time: 306.47 segundos
+
+BACKLOG SIZE
+consultas: max 4529, promedio 2019.72
+reintentos: max 1589, promedio 856.22
+dlq: max 0, promedio 0.0
+
+tiempo: 400s
