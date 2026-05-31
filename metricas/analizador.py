@@ -261,3 +261,129 @@ print(f"latencia p50:  {p50_total} ms")
 print(f"latencia p95:  {p95_total} ms")
 print(f"eviction rate:  {eviction_rate} evictions/min")
 print(f"cache efficiency:  {cache_efficiency}")
+print()
+
+# metricas de la tarea 2
+print("METRICAS TAREA 2")
+
+total_eventos = len(eventos)
+
+# contar cuantos de reintento y dlq hay
+cant_reintentos = 0
+cant_dlq = 0
+cant_exito_recuperado = 0
+
+tiempo_primer_reintento = None
+tiempo_ultimo_exito_recuperado = None
+
+i = 0
+while i < len(eventos):
+    ev = eventos[i]
+    tipo = ev["evento"]
+    rc = ev["retry_count"]
+    
+    if tipo == "reintento":
+        cant_reintentos = cant_reintentos + 1
+        
+        if tiempo_primer_reintento is None:
+            tiempo_primer_reintento = ev["timestamp"]
+        else:
+            if ev["timestamp"] < tiempo_primer_reintento:
+                tiempo_primer_reintento = ev["timestamp"]
+                
+    elif tipo == "dlq":
+        cant_dlq = cant_dlq + 1
+        
+    elif tipo == "exito":
+        if rc > 0:
+            cant_exito_recuperado = cant_exito_recuperado + 1
+            
+            if tiempo_ultimo_exito_recuperado is None:
+                tiempo_ultimo_exito_recuperado = ev["timestamp"]
+            else:
+                if ev["timestamp"] > tiempo_ultimo_exito_recuperado:
+                    tiempo_ultimo_exito_recuperado = ev["timestamp"]
+                    
+    i = i + 1
+
+# retry rate
+if total_eventos > 0:
+    retry_rate = cant_reintentos / total_eventos
+else:
+    retry_rate = 0
+
+# recovery rate
+if cant_reintentos > 0:
+    recovery_rate = cant_exito_recuperado / cant_reintentos
+else:
+    recovery_rate = 0
+
+# DLQ rate
+if total_eventos > 0:
+    dlq_rate = cant_dlq / total_eventos
+else:
+    dlq_rate = 0
+
+# recovery time
+if tiempo_primer_reintento is not None and tiempo_ultimo_exito_recuperado is not None:
+    recovery_time = tiempo_ultimo_exito_recuperado - tiempo_primer_reintento
+else:
+    recovery_time = 0
+
+if recovery_time < 0:
+    recovery_time = 0
+
+print(f"retry rate: {round(retry_rate * 100, 2)}%")
+print(f"recovery rate: {round(recovery_rate * 100, 2)}%")
+print(f"dlq rate: {round(dlq_rate * 100, 2)}%")
+print(f"recovery time: {round(recovery_time, 2)} segundos")
+print()
+
+print("BACKLOG SIZE")
+try:
+    with open("/app/output/kafka_lag.json", "r", encoding="utf-8") as f:
+        datos_lag = json.load(f)
+        
+    max_lag_consultas = 0
+    sum_lag_consultas = 0
+    
+    max_lag_reintentos = 0
+    sum_lag_reintentos = 0
+    
+    max_lag_dlq = 0
+    sum_lag_dlq = 0
+    
+    muestras = len(datos_lag)
+    
+    if muestras > 0:
+        j = 0
+        while j < muestras:
+            muestra = datos_lag[j]
+            
+            lag_c = muestra.get("consultas", {}).get("lag", 0)
+            lag_r = muestra.get("reintentos", {}).get("lag", 0)
+            lag_d = muestra.get("dlq", {}).get("lag", 0)
+            
+            if lag_c > max_lag_consultas:
+                max_lag_consultas = lag_c
+            sum_lag_consultas = sum_lag_consultas + lag_c
+            
+            if lag_r > max_lag_reintentos:
+                max_lag_reintentos = lag_r
+            sum_lag_reintentos = sum_lag_reintentos + lag_r
+            
+            if lag_d > max_lag_dlq:
+                max_lag_dlq = lag_d
+            sum_lag_dlq = sum_lag_dlq + lag_d
+                
+            j = j + 1
+            
+        print(f"consultas: max {max_lag_consultas}, promedio {round(sum_lag_consultas / muestras, 2)}")
+        print(f"reintentos: max {max_lag_reintentos}, promedio {round(sum_lag_reintentos / muestras, 2)}")
+        print(f"dlq: max {max_lag_dlq}, promedio {round(sum_lag_dlq / muestras, 2)}")
+    else:
+        print("no hay muestras de lag")
+except Exception as e:
+    print("no se pudo leer el kafka_lag.json")
+
+print()
