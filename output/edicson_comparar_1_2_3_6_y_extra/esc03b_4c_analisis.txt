@@ -1,0 +1,88 @@
+ Container tareas-sd-analizador-run-7af3044d6f55 Creating 
+ Container tareas-sd-analizador-run-7af3044d6f55 Created 
+eventos: 17271
+
+METRICA 1: HIT RATE
+global:
+hits:  7648
+misses:  9623
+total:  17271
+hit rate:  44.28%
+miss rate:  55.72%
+
+por tipo de query:
+Q1: 4386 hits, 4873 misses, total 9259, hit rate 47.37%
+Q2: 1970 hits, 2466 misses, total 4436, hit rate 44.41%
+Q3: 1285 hits, 1745 misses, total 3030, hit rate 42.41%
+Q4: 7 hits, 509 misses, total 516, hit rate 1.36%
+Q5: 0 hits, 30 misses, total 30, hit rate 0.0%
+
+METRICA 2: THROUGHPUT
+duracion total:  278.02 segundos
+consultas:  17271
+throughput:  62.12 consultas/s
+
+METRICA 3: LATENCIA p50 / p95
+total (17271 eventos):
+p50: 67.96 ms
+p95: 187.91 ms
+promedio: 75.42 ms
+min: 2.75 ms
+max: 457.98 ms
+
+hits / cache (7648 eventos):
+p50: 13.53 ms
+p95: 54.04 ms
+promedio: 19.89 ms
+
+misses / db (9623 eventos):
+p50: 110.89 ms
+p95: 213.08 ms
+promedio: 119.55 ms
+
+solo tiempo db (1976 eventos):
+p50: 60.27 ms
+p95: 142.69 ms
+promedio: 67.42 ms
+
+latencia por tipo de query:
+Q1: p50=61.86ms, p95=175.46ms, avg=70.77ms
+Q2: p50=67.07ms, p95=193.03ms, avg=75.96ms
+Q3: p50=70.11ms, p95=192.99ms, avg=77.46ms
+Q4: p50=127.41ms, p95=295.22ms, avg=140.73ms
+Q5: p50=94.3ms, p95=171.34ms, avg=100.17ms
+
+METRICA 4: EVICTION RATE
+evicted keys:  884
+duracion:  4.63 minutos
+eviction rate:  190.77 evictions/min
+maxmemory:  52428800 bytes
+policy:  volatile-lfu
+memoria usada:  49.97M
+
+METRICA 5: CACHE EFFICIENCY
+avg latencia hit (t_cache):  19.89 ms
+avg latencia db (t_db):  67.42 ms
+tiempo total acumulado:  1302581.63 ms
+cache efficiency:  0.2327
+
+RESUMEN
+hit rate:  44.28%
+throughput:  62.12 consultas/s
+latencia p50:  67.96 ms
+latencia p95:  187.91 ms
+eviction rate:  190.77 evictions/min
+cache efficiency:  0.2327
+
+METRICAS TAREA 2
+retry rate: 0.0%
+recovery rate: 0%
+dlq rate: 0.0%
+recovery time: 0 segundos
+
+BACKLOG SIZE
+consultas: max 5463, promedio 3478.48
+reintentos: max 0, promedio 0.0
+dlq: max 0, promedio 0.0
+
+tiempo: 360s

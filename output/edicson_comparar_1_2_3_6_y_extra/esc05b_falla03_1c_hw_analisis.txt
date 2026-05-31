@@ -1,0 +1,88 @@
+ Container tareas-sd-analizador-run-0fb99ec519fd Creating 
+ Container tareas-sd-analizador-run-0fb99ec519fd Created 
+eventos: 14117
+
+METRICA 1: HIT RATE
+global:
+hits:  6291
+misses:  7826
+total:  14117
+hit rate:  44.56%
+miss rate:  55.44%
+
+por tipo de query:
+Q1: 3651 hits, 4039 misses, total 7690, hit rate 47.48%
+Q2: 1577 hits, 1943 misses, total 3520, hit rate 44.8%
+Q3: 1045 hits, 1413 misses, total 2458, hit rate 42.51%
+Q4: 18 hits, 410 misses, total 428, hit rate 4.21%
+Q5: 0 hits, 21 misses, total 21, hit rate 0.0%
+
+METRICA 2: THROUGHPUT
+duracion total:  279.35 segundos
+consultas:  14117
+throughput:  50.54 consultas/s
+
+METRICA 3: LATENCIA p50 / p95
+total (14117 eventos):
+p50: 22.59 ms
+p95: 51.46 ms
+promedio: 21.85 ms
+min: 0 ms
+max: 170.64 ms
+
+hits / cache (6291 eventos):
+p50: 5.56 ms
+p95: 8.15 ms
+promedio: 5.68 ms
+
+misses / db (7826 eventos):
+p50: 34.01 ms
+p95: 60.51 ms
+promedio: 34.85 ms
+
+solo tiempo db (1268 eventos):
+p50: 25.8 ms
+p95: 56.82 ms
+promedio: 28.19 ms
+
+latencia por tipo de query:
+Q1: p50=21.68ms, p95=46.56ms, avg=20.47ms
+Q2: p50=22.8ms, p95=50.98ms, avg=21.89ms
+Q3: p50=22.87ms, p95=50.57ms, avg=21.9ms
+Q4: p50=45.5ms, p95=99.16ms, avg=45.6ms
+Q5: p50=31.29ms, p95=61.19ms, avg=29.14ms
+
+METRICA 4: EVICTION RATE
+evicted keys:  522
+duracion:  4.66 minutos
+eviction rate:  112.12 evictions/min
+maxmemory:  52428800 bytes
+policy:  volatile-lfu
+memoria usada:  47.92M
+
+METRICA 5: CACHE EFFICIENCY
+avg latencia hit (t_cache):  5.68 ms
+avg latencia db (t_db):  28.19 ms
+tiempo total acumulado:  308477.85 ms
+cache efficiency:  0.407
+
+RESUMEN
+hit rate:  44.56%
+throughput:  50.54 consultas/s
+latencia p50:  22.59 ms
+latencia p95:  51.46 ms
+eviction rate:  112.12 evictions/min
+cache efficiency:  0.407
+
+METRICAS TAREA 2
+retry rate: 1.9%
+recovery rate: 20.52%
+dlq rate: 0.0%
+recovery time: 278.59 segundos
+
+BACKLOG SIZE
+consultas: max 5798, promedio 3513.6
+reintentos: max 268, promedio 126.74
+dlq: max 0, promedio 0.0
+
+tiempo: 351s

@@ -1,0 +1,88 @@
+ Container tareas-sd-analizador-run-da94e2e87d2f Creating 
+ Container tareas-sd-analizador-run-da94e2e87d2f Created 
+eventos: 2000
+
+METRICA 1: HIT RATE
+global:
+hits:  882
+misses:  1118
+total:  2000
+hit rate:  44.1%
+miss rate:  55.9%
+
+por tipo de query:
+Q1: 516 hits, 574 misses, total 1090, hit rate 47.34%
+Q2: 223 hits, 287 misses, total 510, hit rate 43.73%
+Q3: 142 hits, 198 misses, total 340, hit rate 41.76%
+Q4: 1 hits, 47 misses, total 48, hit rate 2.08%
+Q5: 0 hits, 12 misses, total 12, hit rate 0.0%
+
+METRICA 2: THROUGHPUT
+duracion total:  48.67 segundos
+consultas:  2000
+throughput:  41.09 consultas/s
+
+METRICA 3: LATENCIA p50 / p95
+total (2000 eventos):
+p50: 31.64 ms
+p95: 1083.71 ms
+promedio: 160.65 ms
+min: 3.19 ms
+max: 1312.07 ms
+
+hits / cache (882 eventos):
+p50: 6.3 ms
+p95: 33.45 ms
+promedio: 10.57 ms
+
+misses / db (1118 eventos):
+p50: 64.67 ms
+p95: 1115.42 ms
+promedio: 279.04 ms
+
+solo tiempo db (236 eventos):
+p50: 1039.08 ms
+p95: 1124.13 ms
+promedio: 1048.26 ms
+
+latencia por tipo de query:
+Q1: p50=28.83ms, p95=1026.4ms, avg=92.42ms
+Q2: p50=33.92ms, p95=1084.24ms, avg=168.51ms
+Q3: p50=35.42ms, p95=1121.71ms, avg=211.73ms
+Q4: p50=1071.95ms, p95=1191.52ms, avg=1039.37ms
+Q5: p50=1055.54ms, p95=1102.68ms, avg=1060.87ms
+
+METRICA 4: EVICTION RATE
+evicted keys:  74
+duracion:  0.81 minutos
+eviction rate:  91.23 evictions/min
+maxmemory:  52428800 bytes
+policy:  volatile-lfu
+memoria usada:  22.89M
+
+METRICA 5: CACHE EFFICIENCY
+avg latencia hit (t_cache):  10.57 ms
+avg latencia db (t_db):  1048.26 ms
+tiempo total acumulado:  321292.66 ms
+cache efficiency:  -0.011
+
+RESUMEN
+hit rate:  44.1%
+throughput:  41.09 consultas/s
+latencia p50:  31.64 ms
+latencia p95:  1083.71 ms
+eviction rate:  91.23 evictions/min
+cache efficiency:  -0.011
+
+METRICAS TAREA 2
+retry rate: 0.0%
+recovery rate: 0%
+dlq rate: 0.0%
+recovery time: 0 segundos
+
+BACKLOG SIZE
+consultas: max 1000, promedio 485.44
+reintentos: max 0, promedio 0.0
+dlq: max 0, promedio 0.0
+
+tiempo: 164s

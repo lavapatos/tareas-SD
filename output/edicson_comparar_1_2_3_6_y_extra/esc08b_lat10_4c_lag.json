@@ -1,0 +1,452 @@
+[
+  {
+    "timestamp": 1780251836.3647213,
+    "consultas": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    },
+    "reintentos": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    },
+    "dlq": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    }
+  },
+  {
+    "timestamp": 1780251841.9377313,
+    "consultas": {
+      "lag": 31,
+      "end_offset": 31,
+      "committed": 0
+    },
+    "reintentos": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    },
+    "dlq": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    }
+  },
+  {
+    "timestamp": 1780251847.3846703,
+    "consultas": {
+      "lag": 291,
+      "end_offset": 291,
+      "committed": 0
+    },
+    "reintentos": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    },
+    "dlq": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    }
+  },
+  {
+    "timestamp": 1780251852.4631443,
+    "consultas": {
+      "lag": 536,
+      "end_offset": 536,
+      "committed": 0
+    },
+    "reintentos": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    },
+    "dlq": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    }
+  },
+  {
+    "timestamp": 1780251857.5214682,
+    "consultas": {
+      "lag": 779,
+      "end_offset": 779,
+      "committed": 0
+    },
+    "reintentos": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    },
+    "dlq": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    }
+  },
+  {
+    "timestamp": 1780251862.5982544,
+    "consultas": {
+      "lag": 1000,
+      "end_offset": 1000,
+      "committed": 0
+    },
+    "reintentos": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    },
+    "dlq": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    }
+  },
+  {
+    "timestamp": 1780251867.6765335,
+    "consultas": {
+      "lag": 1000,
+      "end_offset": 1000,
+      "committed": 0
+    },
+    "reintentos": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    },
+    "dlq": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    }
+  },
+  {
+    "timestamp": 1780251872.7216341,
+    "consultas": {
+      "lag": 1000,
+      "end_offset": 1000,
+      "committed": 0
+    },
+    "reintentos": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    },
+    "dlq": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    }
+  },
+  {
+    "timestamp": 1780251877.7731524,
+    "consultas": {
+      "lag": 1000,
+      "end_offset": 1000,
+      "committed": 0
+    },
+    "reintentos": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    },
+    "dlq": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    }
+  },
+  {
+    "timestamp": 1780251882.818872,
+    "consultas": {
+      "lag": 1000,
+      "end_offset": 1000,
+      "committed": 0
+    },
+    "reintentos": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    },
+    "dlq": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    }
+  },
+  {
+    "timestamp": 1780251887.847808,
+    "consultas": {
+      "lag": 1000,
+      "end_offset": 1000,
+      "committed": 0
+    },
+    "reintentos": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    },
+    "dlq": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    }
+  },
+  {
+    "timestamp": 1780251892.8857648,
+    "consultas": {
+      "lag": 1000,
+      "end_offset": 1000,
+      "committed": 0
+    },
+    "reintentos": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    },
+    "dlq": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    }
+  },
+  {
+    "timestamp": 1780251897.9231262,
+    "consultas": {
+      "lag": 1000,
+      "end_offset": 1000,
+      "committed": 0
+    },
+    "reintentos": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    },
+    "dlq": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    }
+  },
+  {
+    "timestamp": 1780251902.9768927,
+    "consultas": {
+      "lag": 1000,
+      "end_offset": 1000,
+      "committed": 0
+    },
+    "reintentos": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    },
+    "dlq": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    }
+  },
+  {
+    "timestamp": 1780251908.0250654,
+    "consultas": {
+      "lag": 1000,
+      "end_offset": 1000,
+      "committed": 0
+    },
+    "reintentos": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    },
+    "dlq": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    }
+  },
+  {
+    "timestamp": 1780251913.0673587,
+    "consultas": {
+      "lag": 499,
+      "end_offset": 1000,
+      "committed": 501
+    },
+    "reintentos": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    },
+    "dlq": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    }
+  },
+  {
+    "timestamp": 1780251918.1022468,
+    "consultas": {
+      "lag": 0,
+      "end_offset": 1000,
+      "committed": 1000
+    },
+    "reintentos": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    },
+    "dlq": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    }
+  },
+  {
+    "timestamp": 1780251923.1614356,
+    "consultas": {
+      "lag": 0,
+      "end_offset": 1000,
+      "committed": 1000
+    },
+    "reintentos": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    },
+    "dlq": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    }
+  },
+  {
+    "timestamp": 1780251928.1975214,
+    "consultas": {
+      "lag": 0,
+      "end_offset": 1000,
+      "committed": 1000
+    },
+    "reintentos": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    },
+    "dlq": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    }
+  },
+  {
+    "timestamp": 1780251933.2315114,
+    "consultas": {
+      "lag": 0,
+      "end_offset": 1000,
+      "committed": 1000
+    },
+    "reintentos": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    },
+    "dlq": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    }
+  },
+  {
+    "timestamp": 1780251938.2540476,
+    "consultas": {
+      "lag": 0,
+      "end_offset": 1000,
+      "committed": 1000
+    },
+    "reintentos": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    },
+    "dlq": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    }
+  },
+  {
+    "timestamp": 1780251943.286082,
+    "consultas": {
+      "lag": 0,
+      "end_offset": 1000,
+      "committed": 1000
+    },
+    "reintentos": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    },
+    "dlq": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    }
+  },
+  {
+    "timestamp": 1780251948.3299756,
+    "consultas": {
+      "lag": 0,
+      "end_offset": 1000,
+      "committed": 1000
+    },
+    "reintentos": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    },
+    "dlq": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    }
+  },
+  {
+    "timestamp": 1780251953.3681104,
+    "consultas": {
+      "lag": 0,
+      "end_offset": 1000,
+      "committed": 1000
+    },
+    "reintentos": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    },
+    "dlq": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    }
+  },
+  {
+    "timestamp": 1780251958.4552796,
+    "consultas": {
+      "lag": 0,
+      "end_offset": 1000,
+      "committed": 1000
+    },
+    "reintentos": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    },
+    "dlq": {
+      "lag": 0,
+      "end_offset": 0,
+      "committed": 0
+    }
+  }
+]

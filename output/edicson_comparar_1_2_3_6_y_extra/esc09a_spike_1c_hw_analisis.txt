@@ -1,0 +1,88 @@
+ Container tareas-sd-analizador-run-5dcc89d12f72 Creating 
+ Container tareas-sd-analizador-run-5dcc89d12f72 Created 
+eventos: 12494
+
+METRICA 1: HIT RATE
+global:
+hits:  5553
+misses:  6941
+total:  12494
+hit rate:  44.45%
+miss rate:  55.55%
+
+por tipo de query:
+Q1: 3252 hits, 3584 misses, total 6836, hit rate 47.57%
+Q2: 1358 hits, 1710 misses, total 3068, hit rate 44.26%
+Q3: 932 hits, 1256 misses, total 2188, hit rate 42.6%
+Q4: 11 hits, 373 misses, total 384, hit rate 2.86%
+Q5: 0 hits, 18 misses, total 18, hit rate 0.0%
+
+METRICA 2: THROUGHPUT
+duracion total:  249.23 segundos
+consultas:  12494
+throughput:  50.13 consultas/s
+
+METRICA 3: LATENCIA p50 / p95
+total (12494 eventos):
+p50: 23.28 ms
+p95: 52.36 ms
+promedio: 22.63 ms
+min: 2.15 ms
+max: 195.38 ms
+
+hits / cache (5553 eventos):
+p50: 5.57 ms
+p95: 8.17 ms
+promedio: 5.67 ms
+
+misses / db (6941 eventos):
+p50: 34.72 ms
+p95: 62.92 ms
+promedio: 36.19 ms
+
+solo tiempo db (1388 eventos):
+p50: 24.88 ms
+p95: 57.29 ms
+promedio: 27.92 ms
+
+latencia por tipo de query:
+Q1: p50=21.85ms, p95=45.92ms, avg=20.57ms
+Q2: p50=23.68ms, p95=52.37ms, avg=22.71ms
+Q3: p50=23.82ms, p95=52.06ms, avg=23.24ms
+Q4: p50=52.42ms, p95=100.19ms, avg=54.36ms
+Q5: p50=33.45ms, p95=64.84ms, avg=38.78ms
+
+METRICA 4: EVICTION RATE
+evicted keys:  600
+duracion:  4.15 minutos
+eviction rate:  144.44 evictions/min
+maxmemory:  52428800 bytes
+policy:  volatile-lfu
+memoria usada:  48.83M
+
+METRICA 5: CACHE EFFICIENCY
+avg latencia hit (t_cache):  5.67 ms
+avg latencia db (t_db):  27.92 ms
+tiempo total acumulado:  282697.96 ms
+cache efficiency:  0.3541
+
+RESUMEN
+hit rate:  44.45%
+throughput:  50.13 consultas/s
+latencia p50:  23.28 ms
+latencia p95:  52.36 ms
+eviction rate:  144.44 evictions/min
+cache efficiency:  0.3541
+
+METRICAS TAREA 2
+retry rate: 0.0%
+recovery rate: 0%
+dlq rate: 0.0%
+recovery time: 0 segundos
+
+BACKLOG SIZE
+consultas: max 6637, promedio 4100.79
+reintentos: max 0, promedio 0.0
+dlq: max 0, promedio 0.0
+
+tiempo: 321s

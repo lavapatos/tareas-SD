@@ -1,0 +1,88 @@
+ Container tareas-sd-analizador-run-78ccec4744c7 Creating 
+ Container tareas-sd-analizador-run-78ccec4744c7 Created 
+eventos: 17778
+
+METRICA 1: HIT RATE
+global:
+hits:  7965
+misses:  9813
+total:  17778
+hit rate:  44.8%
+miss rate:  55.2%
+
+por tipo de query:
+Q1: 4621 hits, 5040 misses, total 9661, hit rate 47.83%
+Q2: 2029 hits, 2460 misses, total 4489, hit rate 45.2%
+Q3: 1299 hits, 1778 misses, total 3077, hit rate 42.22%
+Q4: 16 hits, 513 misses, total 529, hit rate 3.02%
+Q5: 0 hits, 22 misses, total 22, hit rate 0.0%
+
+METRICA 2: THROUGHPUT
+duracion total:  278.57 segundos
+consultas:  17778
+throughput:  63.82 consultas/s
+
+METRICA 3: LATENCIA p50 / p95
+total (17778 eventos):
+p50: 63.91 ms
+p95: 179.02 ms
+promedio: 71.79 ms
+min: 0 ms
+max: 403.13 ms
+
+hits / cache (7965 eventos):
+p50: 14.5 ms
+p95: 56.77 ms
+promedio: 21.1 ms
+
+misses / db (9813 eventos):
+p50: 107.69 ms
+p95: 200.4 ms
+promedio: 112.94 ms
+
+solo tiempo db (1534 eventos):
+p50: 57.05 ms
+p95: 129.16 ms
+promedio: 63.18 ms
+
+latencia por tipo de query:
+Q1: p50=59.99ms, p95=171.75ms, avg=69.26ms
+Q2: p50=61.25ms, p95=180.71ms, avg=71.3ms
+Q3: p50=68.15ms, p95=183.97ms, avg=73.29ms
+Q4: p50=106.35ms, p95=258.6ms, avg=113.35ms
+Q5: p50=53.14ms, p95=188.19ms, avg=75.31ms
+
+METRICA 4: EVICTION RATE
+evicted keys:  661
+duracion:  4.64 minutos
+eviction rate:  142.37 evictions/min
+maxmemory:  52428800 bytes
+policy:  volatile-lfu
+memoria usada:  48.85M
+
+METRICA 5: CACHE EFFICIENCY
+avg latencia hit (t_cache):  21.1 ms
+avg latencia db (t_db):  63.18 ms
+tiempo total acumulado:  1276268.5 ms
+cache efficiency:  0.256
+
+RESUMEN
+hit rate:  44.8%
+throughput:  63.82 consultas/s
+latencia p50:  63.91 ms
+latencia p95:  179.02 ms
+eviction rate:  142.37 evictions/min
+cache efficiency:  0.256
+
+METRICAS TAREA 2
+retry rate: 1.78%
+recovery rate: 19.56%
+dlq rate: 0.0%
+recovery time: 269.15 segundos
+
+BACKLOG SIZE
+consultas: max 5444, promedio 3180.95
+reintentos: max 324, promedio 148.19
+dlq: max 0, promedio 0.0
+
+tiempo: 349s

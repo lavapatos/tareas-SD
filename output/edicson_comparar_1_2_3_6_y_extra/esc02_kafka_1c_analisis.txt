@@ -1,0 +1,88 @@
+ Container tareas-sd-analizador-run-0efc94d5a6e6 Creating 
+ Container tareas-sd-analizador-run-0efc94d5a6e6 Created 
+eventos: 14195
+
+METRICA 1: HIT RATE
+global:
+hits:  6352
+misses:  7843
+total:  14195
+hit rate:  44.75%
+miss rate:  55.25%
+
+por tipo de query:
+Q1: 3633 hits, 3993 misses, total 7626, hit rate 47.64%
+Q2: 1610 hits, 1990 misses, total 3600, hit rate 44.72%
+Q3: 1099 hits, 1446 misses, total 2545, hit rate 43.18%
+Q4: 10 hits, 402 misses, total 412, hit rate 2.43%
+Q5: 0 hits, 12 misses, total 12, hit rate 0.0%
+
+METRICA 2: THROUGHPUT
+duracion total:  278.81 segundos
+consultas:  14195
+throughput:  50.91 consultas/s
+
+METRICA 3: LATENCIA p50 / p95
+total (14195 eventos):
+p50: 22.19 ms
+p95: 51.95 ms
+promedio: 21.88 ms
+min: 2.2 ms
+max: 201.75 ms
+
+hits / cache (6352 eventos):
+p50: 4.96 ms
+p95: 7.93 ms
+promedio: 5.04 ms
+
+misses / db (7843 eventos):
+p50: 33.61 ms
+p95: 61.73 ms
+promedio: 35.52 ms
+
+solo tiempo db (1492 eventos):
+p50: 24.38 ms
+p95: 57.47 ms
+promedio: 27.58 ms
+
+latencia por tipo de query:
+Q1: p50=21.01ms, p95=45.97ms, avg=20.06ms
+Q2: p50=22.34ms, p95=50.93ms, avg=21.63ms
+Q3: p50=22.57ms, p95=51.05ms, avg=21.96ms
+Q4: p50=53.54ms, p95=108.6ms, avg=56.99ms
+Q5: p50=29.53ms, p95=56.11ms, avg=31.3ms
+
+METRICA 4: EVICTION RATE
+evicted keys:  631
+duracion:  4.65 minutos
+eviction rate:  135.79 evictions/min
+maxmemory:  52428800 bytes
+policy:  volatile-lfu
+memoria usada:  47.93M
+
+METRICA 5: CACHE EFFICIENCY
+avg latencia hit (t_cache):  5.04 ms
+avg latencia db (t_db):  27.58 ms
+tiempo total acumulado:  310607.48 ms
+cache efficiency:  0.3397
+
+RESUMEN
+hit rate:  44.75%
+throughput:  50.91 consultas/s
+latencia p50:  22.19 ms
+latencia p95:  51.95 ms
+eviction rate:  135.79 evictions/min
+cache efficiency:  0.3397
+
+METRICAS TAREA 2
+retry rate: 0.0%
+recovery rate: 0%
+dlq rate: 0.0%
+recovery time: 0 segundos
+
+BACKLOG SIZE
+consultas: max 5760, promedio 3599.32
+reintentos: max 0, promedio 0.0
+dlq: max 0, promedio 0.0
+
+tiempo: 353s

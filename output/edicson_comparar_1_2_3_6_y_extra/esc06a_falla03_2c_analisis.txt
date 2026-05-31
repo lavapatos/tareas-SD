@@ -1,0 +1,88 @@
+ Container tareas-sd-analizador-run-0c7c80246fc2 Creating 
+ Container tareas-sd-analizador-run-0c7c80246fc2 Created 
+eventos: 17201
+
+METRICA 1: HIT RATE
+global:
+hits:  7674
+misses:  9527
+total:  17201
+hit rate:  44.61%
+miss rate:  55.39%
+
+por tipo de query:
+Q1: 4427 hits, 4874 misses, total 9301, hit rate 47.6%
+Q2: 1960 hits, 2440 misses, total 4400, hit rate 44.55%
+Q3: 1276 hits, 1706 misses, total 2982, hit rate 42.79%
+Q4: 11 hits, 489 misses, total 500, hit rate 2.2%
+Q5: 0 hits, 18 misses, total 18, hit rate 0.0%
+
+METRICA 2: THROUGHPUT
+duracion total:  286.98 segundos
+consultas:  17201
+throughput:  59.94 consultas/s
+
+METRICA 3: LATENCIA p50 / p95
+total (17201 eventos):
+p50: 35.67 ms
+p95: 96.87 ms
+promedio: 37.31 ms
+min: 0 ms
+max: 287.11 ms
+
+hits / cache (7674 eventos):
+p50: 6.36 ms
+p95: 24.47 ms
+promedio: 8.96 ms
+
+misses / db (9527 eventos):
+p50: 54.12 ms
+p95: 110.78 ms
+promedio: 60.14 ms
+
+solo tiempo db (1542 eventos):
+p50: 39.23 ms
+p95: 100.46 ms
+promedio: 44.48 ms
+
+latencia por tipo de query:
+Q1: p50=33.82ms, p95=91.25ms, avg=35.43ms
+Q2: p50=35.56ms, p95=93.84ms, avg=36.47ms
+Q3: p50=36.42ms, p95=98.2ms, avg=38.07ms
+Q4: p50=69.09ms, p95=182.76ms, avg=74.85ms
+Q5: p50=42.85ms, p95=87.31ms, avg=45.06ms
+
+METRICA 4: EVICTION RATE
+evicted keys:  655
+duracion:  4.78 minutos
+eviction rate:  136.94 evictions/min
+maxmemory:  52428800 bytes
+policy:  volatile-lfu
+memoria usada:  46.12M
+
+METRICA 5: CACHE EFFICIENCY
+avg latencia hit (t_cache):  8.96 ms
+avg latencia db (t_db):  44.48 ms
+tiempo total acumulado:  641735.19 ms
+cache efficiency:  0.3157
+
+RESUMEN
+hit rate:  44.61%
+throughput:  59.94 consultas/s
+latencia p50:  35.67 ms
+latencia p95:  96.87 ms
+eviction rate:  136.94 evictions/min
+cache efficiency:  0.3157
+
+METRICAS TAREA 2
+retry rate: 1.81%
+recovery rate: 16.35%
+dlq rate: 0.0%
+recovery time: 283.99 segundos
+
+BACKLOG SIZE
+consultas: max 5076, promedio 3070.63
+reintentos: max 312, promedio 141.05
+dlq: max 0, promedio 0.0
+
+tiempo: 356s
