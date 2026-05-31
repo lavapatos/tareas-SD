@@ -95,7 +95,6 @@ services:
       - KAFKA_TOPIC=${KAFKA_TOPIC}
       - KAFKA_GROUP=grupo_consumidores
       - MAX_RETRIES=${MAX_RETRIES}
-      - CONSUMER_ID=consumer-0
       - CACHE_URL=http://cache_service:8001
       - REDIS_HOST=redis
     depends_on:

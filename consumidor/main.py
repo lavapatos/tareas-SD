@@ -15,8 +15,8 @@ kafka_topic = os.environ.get("KAFKA_TOPIC", "consultas")
 kafka_group = os.environ.get("KAFKA_GROUP", "grupo_consumidores")
 max_reintentos = int(os.environ.get("MAX_RETRIES", "3"))
 
-# para saber cual consumidor proceso cada consulta
-consumer_id = os.environ.get("CONSUMER_ID", "consumer-0")
+import socket
+consumer_id = os.environ.get("CONSUMER_ID", "") or socket.gethostname()[:12]
 
 # donde esta el cache
 url_cache = os.environ.get("CACHE_URL", "http://cache_service:8001")
