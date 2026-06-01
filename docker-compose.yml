@@ -46,7 +46,7 @@ services:
   generador_respuestas:
     build: ./generador_respuestas
     volumes:
-      - ./data:/app/dataset
+      - ./dataset:/app/dataset
     ports:
       - "8002:8002"
     environment:

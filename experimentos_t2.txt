@@ -37,7 +37,7 @@
  (hacer pedro)
 
  del enunciado 5: reintentos y dlq (docker stop para agotar reintentos) 
- 5a - docker stop generador hasta que haya dlq, 1 consumer
+ 5a - docker stop generador hasta que haya dlq, 1 consumer // lo deje 140s
  N_CONSULTAS=10000 SEND_RATE=50 FALLA_RATE=0 LATENCY_ARTIFICIAL=0 consumers=1
  (hacer pedro)
 
@@ -60,7 +60,7 @@
 
  7-t2-1c - kafka 1c, docker stop generador 30s
  N_CONSULTAS=10000 SEND_RATE=50 FALLA_RATE=0 LATENCY_ARTIFICIAL=0 consumers=1
- (hacer pedro)
+ (hacer pedro) // este es el 4b de los experimentos
 
  7-t2-4c - kafka 4c, docker stop generador 30s
  N_CONSULTAS=10000 SEND_RATE=50 FALLA_RATE=0 LATENCY_ARTIFICIAL=0 consumers=4
