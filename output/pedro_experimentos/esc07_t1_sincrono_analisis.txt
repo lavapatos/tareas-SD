@@ -1,0 +1,83 @@
+eventos: 7747
+
+METRICA 1: HIT RATE
+global:
+hits:  2008
+misses:  5739
+total:  7747
+hit rate:  25.92%
+miss rate:  74.08%
+
+por tipo de query:
+Q1: 233 hits, 769 misses, total 1002, hit rate 23.25%
+Q2: 268 hits, 800 misses, total 1068, hit rate 25.09%
+Q3: 284 hits, 796 misses, total 1080, hit rate 26.3%
+Q4: 1131 hits, 3069 misses, total 4200, hit rate 26.93%
+Q5: 92 hits, 305 misses, total 397, hit rate 23.17%
+
+METRICA 2: THROUGHPUT
+duracion total:  209.45 segundos
+consultas:  7747
+throughput:  36.99 consultas/s
+
+METRICA 3: LATENCIA p50 / p95
+total (7747 eventos):
+p50: 12.85 ms
+p95: 18.88 ms
+promedio: 19.65 ms
+min: 1.61 ms
+max: 65300.97 ms
+
+hits / cache (2008 eventos):
+p50: 2.5 ms
+p95: 4.78 ms
+promedio: 2.91 ms
+
+misses / db (5739 eventos):
+p50: 13.67 ms
+p95: 19.24 ms
+promedio: 25.51 ms
+
+solo tiempo db (5739 eventos):
+p50: 7.49 ms
+p95: 13.1 ms
+promedio: 19.36 ms
+
+latencia por tipo de query:
+Q1: p50=12.68ms, p95=14.27ms, avg=10.0ms
+Q2: p50=12.89ms, p95=14.58ms, avg=10.19ms
+Q3: p50=12.68ms, p95=14.47ms, avg=70.31ms
+Q4: p50=16.89ms, p95=19.55ms, avg=12.41ms
+Q5: p50=9.4ms, p95=10.84ms, avg=8.15ms
+
+METRICA 4: EVICTION RATE
+evicted keys:  5688
+duracion:  3.49 minutos
+eviction rate:  1629.45 evictions/min
+maxmemory:  52428800 bytes
+policy:  volatile-lru
+memoria usada:  2.52M
+
+METRICA 5: CACHE EFFICIENCY
+avg latencia hit (t_cache):  2.91 ms
+avg latencia db (t_db):  19.36 ms
+tiempo total acumulado:  152216.79 ms
+cache efficiency:  0.1421
+
+RESUMEN
+hit rate:  25.92%
+throughput:  36.99 consultas/s
+latencia p50:  12.85 ms
+latencia p95:  18.88 ms
+eviction rate:  1629.45 evictions/min
+cache efficiency:  0.1421
+
+METRICAS TAREA 2
+retry rate: 0.0%
+recovery rate: 0%
+dlq rate: 0.0%
+recovery time: 0 segundos
+
+BACKLOG SIZE
+no se pudo leer el kafka_lag.json
+
