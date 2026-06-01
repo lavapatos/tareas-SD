@@ -53,14 +53,18 @@ producer = conectar_producer(kafka_servers)
 
 print("conectado a kafka")
 
-for mensaje in consumer:
-    consulta = mensaje.value
-    retry_count = consulta.get("retry_count", 0)
+import threading
 
-    # backoff exponencial
+def procesar_y_republicar(consulta, prod, topic):
+    retry_count = consulta.get("retry_count", 0)
     espera = 2 ** retry_count
     print(f"  [{consulta.get('id', '?')}] reintento {retry_count}, esperando {espera}s")
     time.sleep(espera)
+    prod.send(topic, value=consulta)
+    print(f"  [{consulta.get('id', '?')}] republicado a {topic}")
 
-    producer.send(kafka_topic, value=consulta)
-    print(f"  [{consulta.get('id', '?')}] republicado a {kafka_topic}")
+for mensaje in consumer:
+    consulta = mensaje.value
+    t = threading.Thread(target=procesar_y_republicar, args=(consulta, producer, kafka_topic))
+    t.daemon = True
+    t.start()

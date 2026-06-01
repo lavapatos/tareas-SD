@@ -1,0 +1,85 @@
+eventos: 21431
+
+METRICA 1: HIT RATE
+global:
+hits:  8892
+misses:  12539
+total:  21431
+hit rate:  41.49%
+miss rate:  58.51%
+
+por tipo de query:
+Q1: 5091 hits, 6332 misses, total 11423, hit rate 44.57%
+Q2: 2245 hits, 3109 misses, total 5354, hit rate 41.93%
+Q3: 1528 hits, 2265 misses, total 3793, hit rate 40.28%
+Q4: 28 hits, 790 misses, total 818, hit rate 3.42%
+Q5: 0 hits, 43 misses, total 43, hit rate 0.0%
+
+METRICA 2: THROUGHPUT
+duracion total:  212.71 segundos
+consultas:  21431
+throughput:  100.75 consultas/s
+
+METRICA 3: LATENCIA p50 / p95
+total (21431 eventos):
+p50: 13.28 ms
+p95: 23.48 ms
+promedio: 9.57 ms
+min: 0 ms
+max: 61.98 ms
+
+hits / cache (8892 eventos):
+p50: 2.92 ms
+p95: 3.69 ms
+promedio: 3.0 ms
+
+misses / db (12539 eventos):
+p50: 14.21 ms
+p95: 25.23 ms
+promedio: 14.24 ms
+
+solo tiempo db (2216 eventos):
+p50: 11.21 ms
+p95: 19.53 ms
+promedio: 11.23 ms
+
+latencia por tipo de query:
+Q1: p50=4.13ms, p95=18.16ms, avg=8.82ms
+Q2: p50=13.37ms, p95=23.64ms, avg=9.6ms
+Q3: p50=13.35ms, p95=24.14ms, avg=9.85ms
+Q4: p50=19.05ms, p95=33.23ms, avg=18.45ms
+Q5: p50=11.76ms, p95=25.61ms, avg=14.31ms
+
+METRICA 4: EVICTION RATE
+evicted keys:  1020
+duracion:  3.55 minutos
+eviction rate:  287.71 evictions/min
+maxmemory:  52428800 bytes
+policy:  volatile-lfu
+memoria usada:  43.10M
+
+METRICA 5: CACHE EFFICIENCY
+avg latencia hit (t_cache):  3.0 ms
+avg latencia db (t_db):  11.23 ms
+tiempo total acumulado:  205176.76 ms
+cache efficiency:  0.4144
+
+RESUMEN
+hit rate:  41.49%
+throughput:  100.75 consultas/s
+latencia p50:  13.28 ms
+latencia p95:  23.48 ms
+eviction rate:  287.71 evictions/min
+cache efficiency:  0.4144
+
+METRICAS TAREA 2
+retry rate: 6.68%
+recovery rate: 66.53%
+dlq rate: 0.0%
+recovery time: 89.87 segundos
+
+BACKLOG SIZE
+consultas: max 1766, promedio 856.52
+reintentos: max 1431, promedio 996.06
+dlq: max 0, promedio 0.0
+
