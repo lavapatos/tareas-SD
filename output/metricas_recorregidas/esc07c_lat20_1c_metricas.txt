@@ -1,0 +1,45 @@
+caso: esc07c_lat20_1c
+descripcion: latencia artificial 2.0s, 1 consumidor
+
+conteos
+n esperado: 1000
+eventos registrados: 392
+cache: 196 eventos; 157 hit y 39 miss
+kafka: 196 exito, 0 reintento, 0 dlq
+consultas sin cierre observado: 804
+
+cache
+hit rate cache: 80.1%
+miss rate cache: 19.9%
+latencia cache: p50 6.64 ms, p95 2051.6 ms, prom 410.79 ms
+latencia hit: p50 6.07 ms, p95 10.08 ms, prom 6.44 ms
+latencia miss: p50 2037.2 ms, p95 2065.63 ms, prom 2038.57 ms
+tiempo db en miss: p50 2019.48 ms, p95 2043.06 ms, prom 2020.27 ms
+redis: policy volatile-lfu, maxmemory 52428800, usado 36.31M, evicted_keys 0
+por query:
+Q1: 113 hit, 10 miss, hit rate 91.87%
+Q2: 26 hit, 6 miss, hit rate 81.25%
+Q3: 18 hit, 13 miss, hit rate 58.06%
+Q4: 0 hit, 9 miss, hit rate 0%
+Q5: 0 hit, 1 miss, hit rate 0%
+
+kafka
+exitos: 196 de 1000 (19.6%)
+exitos desde cache: 157
+exitos desde generador: 39
+throughput exitos: 2.3 consultas/s en 85.12 s
+latencia consumidor: p50 38.69 ms, p95 2089.41 ms, prom 441.33 ms
+
+reintentos y dlq
+intentos a reintentos: 0 (0% sobre n esperado)
+consultas distintas con reintento: 0 (0% sobre n esperado)
+consultas recuperadas despues de reintento: 0 (n/a sobre consultas con reintento)
+recuperadas desde cache: 0
+recuperadas desde generador: 0
+dlq: 0 eventos, 0 consultas (0% sobre n esperado)
+
+backlog
+muestras backlog: 24, captura 116.93 s
+consultas: max 1000, prom 868.17, final 1000
+reintentos: max 0, prom 0, final 0
+dlq: max 0, prom 0, final 0

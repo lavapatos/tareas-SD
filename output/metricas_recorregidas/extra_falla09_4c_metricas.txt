@@ -1,0 +1,45 @@
+caso: extra_falla09_4c
+descripcion: falla random 0.9, 4 consumidores
+
+conteos
+n esperado: 10000
+eventos registrados: 18736
+cache: 8573 eventos; 8384 hit y 189 miss
+kafka: 8573 exito, 1590 reintento, 0 dlq
+consultas sin cierre observado: 1427
+
+cache
+hit rate cache: 97.8%
+miss rate cache: 2.2%
+latencia cache: p50 11.57 ms, p95 53.57 ms, prom 18.78 ms
+latencia hit: p50 11.23 ms, p95 48.77 ms, prom 17.43 ms
+latencia miss: p50 69.96 ms, p95 153.34 ms, prom 78.89 ms
+tiempo db en miss: p50 36.12 ms, p95 93.81 ms, prom 42.04 ms
+redis: policy volatile-lfu, maxmemory 52428800, usado 26.44M, evicted_keys 37
+por query:
+Q1: 4921 hit, 52 miss, hit rate 98.95%
+Q2: 2147 hit, 54 miss, hit rate 97.55%
+Q3: 1295 hit, 40 miss, hit rate 97%
+Q4: 21 hit, 42 miss, hit rate 33.33%
+Q5: 0 hit, 1 miss, hit rate 0%
+
+kafka
+exitos: 8573 de 10000 (85.73%)
+exitos desde cache: 8384
+exitos desde generador: 189
+throughput exitos: 28 consultas/s en 306.21 s
+latencia consumidor: p50 105.68 ms, p95 187.72 ms, prom 111.22 ms
+
+reintentos y dlq
+intentos a reintentos: 1590 (15.9% sobre n esperado)
+consultas distintas con reintento: 1511 (15.11% sobre n esperado)
+consultas recuperadas despues de reintento: 84 (5.56% sobre consultas con reintento)
+recuperadas desde cache: 78
+recuperadas desde generador: 6
+dlq: 0 eventos, 0 consultas (0% sobre n esperado)
+
+backlog
+muestras backlog: 69, captura 344.61 s
+consultas: max 4529, prom 1990.48, final 2
+reintentos: max 1592, prom 866.88, final 1592
+dlq: max 0, prom 0, final 0

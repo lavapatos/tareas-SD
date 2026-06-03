@@ -1,0 +1,45 @@
+caso: esc09a_spike_1c_hw
+descripcion: spike de trafico, 1 consumidor
+
+conteos
+n esperado: 10000
+eventos registrados: 12494
+cache: 6247 eventos; 5553 hit y 694 miss
+kafka: 6247 exito, 0 reintento, 0 dlq
+consultas sin cierre observado: 3753
+
+cache
+hit rate cache: 88.89%
+miss rate cache: 11.11%
+latencia cache: p50 5.7 ms, p95 34.44 ms, prom 8.98 ms
+latencia hit: p50 5.57 ms, p95 8.17 ms, prom 5.67 ms
+latencia miss: p50 32.58 ms, p95 66.58 ms, prom 35.51 ms
+tiempo db en miss: p50 17.92 ms, p95 45.57 ms, prom 20.34 ms
+redis: policy volatile-lfu, maxmemory 52428800, usado 48.83M, evicted_keys 600
+por query:
+Q1: 3252 hit, 166 miss, hit rate 95.14%
+Q2: 1358 hit, 176 miss, hit rate 88.53%
+Q3: 932 hit, 162 miss, hit rate 85.19%
+Q4: 11 hit, 181 miss, hit rate 5.73%
+Q5: 0 hit, 9 miss, hit rate 0%
+
+kafka
+exitos: 6247 de 10000 (62.47%)
+exitos desde cache: 5553
+exitos desde generador: 694
+throughput exitos: 25.07 consultas/s en 249.2 s
+latencia consumidor: p50 34.85 ms, p95 62.44 ms, prom 36.27 ms
+
+reintentos y dlq
+intentos a reintentos: 0 (0% sobre n esperado)
+consultas distintas con reintento: 0 (0% sobre n esperado)
+consultas recuperadas despues de reintento: 0 (n/a sobre consultas con reintento)
+recuperadas desde cache: 0
+recuperadas desde generador: 0
+dlq: 0 eventos, 0 consultas (0% sobre n esperado)
+
+backlog
+muestras backlog: 56, captura 278.71 s
+consultas: max 6637, prom 4100.79, final 3795
+reintentos: max 0, prom 0, final 0
+dlq: max 0, prom 0, final 0
